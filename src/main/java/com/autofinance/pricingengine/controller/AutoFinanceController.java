@@ -4,6 +4,7 @@ import com.autofinance.pricingengine.dto.VehicleEstimateResponse;
 import com.autofinance.pricingengine.model.VehicleMaster;
 import com.autofinance.pricingengine.service.AutoFinanceService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/v1/vehicles")
 public class AutoFinanceController {
@@ -21,10 +23,12 @@ public class AutoFinanceController {
         this.autoFinanceService = autoFinanceService;
     }
 
+    /*
     @GetMapping("/top10")
     public ResponseEntity<List<VehicleMaster>> getTop10Vehicles() {
         return ResponseEntity.ok(autoFinanceService.getTop10Vehicles());
     }
+    */
 
     @GetMapping("/estimates")
     public ResponseEntity<List<VehicleEstimateResponse>> getRetailEstimates(
